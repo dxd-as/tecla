@@ -1,5 +1,6 @@
 import express from 'express';
 import config from './settings/config.js';
+import PostRouter  from "./controllers/post.controller.js";
 
 // estos imports son necesarios si se hace con ES Modules
 import path from 'path';
@@ -16,6 +17,7 @@ class App {
 
     constructor() {
         this.app = express();
+        this.routes();
         this.init();
     }
 
@@ -29,6 +31,9 @@ class App {
             console.error(`Error`, err.message);
         };
     }
-}
 
- export var myApp = new App();
+    routes(){
+        this.app.use('/post', PostRouter);
+    }
+}
+new App();
