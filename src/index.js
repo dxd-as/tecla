@@ -1,6 +1,5 @@
 import express from 'express';
 import config from './settings/config.js';
-import coolImages from 'cool-images';
 
 // estos imports son necesarios si se hace con ES Modules
 import path from 'path';
